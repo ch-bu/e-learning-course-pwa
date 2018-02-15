@@ -1,0 +1,60 @@
+{{ partial "header.html" . }}
+
+
+<article id="project-single">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-md-9 col-md-offset-3" id="display">
+          <h2>{{ .Title }}</h2>
+          <p>{{ .Params.description }}</p>
+      </div>
+    </div>
+
+    <div class="row" id="information">
+
+      <div class="col-xs-12 col-md-3" id="meta">
+
+        <div id="date">
+          <p>Created</p>
+          <p class="small-p">{{ .Date.Format "January 2006" }}</p>
+        </div>
+
+        <div id="tools">
+          <p>Tools</p>
+          </p>
+          <p class="small-p">
+            {{ range .Params.tools }}
+              <span>{{ . }}</span>
+            {{ end }}
+          </p>
+        </div>
+
+        <div id="links">
+          {{ if isset .Params "code_url" }}
+          <a href="{{ .Params.code_url }}" target="_blank">Show me your code</a>
+          {{ end }}
+
+          {{ if isset .Params "project_url" }}
+          <a href="{{ .Params.project_url }}" target="_blank">Let me see it</a>
+          {{ end }}
+        </div>
+
+      </div>
+
+      <div class="col-xs-12 col-md-9">
+        <img src="{{ .Site.BaseURL}}{{ .Params.img }}" alt="" onclick="window.location='{{ .Params.projecturl }}'">
+      </div>
+    </div>
+
+    <div class="row" id="content">
+      <div class="col-xs-12 col-md-9 col-md-offset-3">
+        {{ .Content }}
+      </div>
+
+    </div>
+  </div>
+
+</article>
+
+
+{{ partial "footer.html" . }}

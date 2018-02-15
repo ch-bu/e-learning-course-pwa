@@ -1,2 +1,3 @@
 node_modules/
-dist/
+public/
+themes/e-learning-course/static/js/

@@ -1,0 +1,5 @@
+baseURL = "http://e-learning-pwd.de/"
+languageCode = "de"
+title = "Grundlagen des E-Learning"
+theme = "e-learning-course"
+publishDir = "public"

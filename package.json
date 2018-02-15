@@ -1,7 +1,7 @@
 {
   "name": "webpack-template",
   "version": "1.0.0",
-  "description": "A template for my web projects",
+  "description": "E-Learning course project",
   "main": "index.js",
   "scripts": {
     "watch": "webpack --watch",
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ch-bu/webpack-template.git"
+    "url": "git+https://github.com/ch-bu/e-learning-course-pwa.git.git"
   },
   "keywords": [
     "webpack"
@@ -19,16 +19,22 @@
   "author": "Christian Burkhart",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ch-bu/webpack-template/issues"
+    "url": "https://github.com/ch-bu/e-learning-course-pwa/issues"
   },
-  "homepage": "https://github.com/ch-bu/webpack-template#readme",
+  "homepage": "https://github.com/ch-bu/e-learning-course-pwa#readme",
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
+    "babel-preset-es2017": "^6.24.1",
     "babel-preset-latest": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
     "css-loader": "^0.28.8",
     "html-webpack-plugin": "^2.30.1",
     "node-sass": "^4.7.2",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.19.1",
     "webpack": "^3.10.0",
