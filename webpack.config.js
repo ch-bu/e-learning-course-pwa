@@ -1,10 +1,13 @@
 const webpack = require('webpack');
 const path = require('path');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
-  entry: './themes/e-learning-course/build/js/index.jsx',
+  entry: {index: './themes/e-learning-course/build/js/index.jsx',
+          style: './themes/e-learning-course/build/scss/main.scss',
+          vendor: ["react", "react-dom"]},
   output: {
-    filename: 'bundle.js',
+    filename: '[name].bundle.js',
     path: path.resolve(__dirname, './themes/e-learning-course/static/js'),
     publicPath: '/'
   },
@@ -26,7 +29,7 @@ module.exports = {
       {
         test: /\.scss$/,
         include: path.resolve(__dirname, './themes/e-learning-course/build/scss'),
-        loader: 'style-loader!css-loader!sass-loader'
+        loader: ExtractTextPlugin.extract(['css-loader', 'sass-loader'])
       }
     ]
   },
@@ -39,5 +42,12 @@ module.exports = {
       minimize: true,
       comments: false
     }),
+    new ExtractTextPlugin({ // define where to save the file
+      filename: '../css/[name].bundle.css',
+      allChunks: true,
+    }),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vendor',
+    })
   ]
 };
